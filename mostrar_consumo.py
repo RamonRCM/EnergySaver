@@ -32,7 +32,7 @@ for chave in consumo_mensal_decrescente.keys():
     ano_mes = ano_mes + list(consumo_mensal_decrescente.keys())[i] + '\n'
     consumo = consumo+ "R$ " + list(consumo_mensal_decrescente.values())[i] + '\n'
     if i+1 != len(list(consumo_mensal_decrescente.keys())):
-        diferenca = diferenca + str((((float(list(consumo_mensal_decrescente.values())[i])/float(list(consumo_mensal_decrescente.values())[i+1])))*100)-100) + '%' +'\n'
+        diferenca = diferenca + str(round((((float(list(consumo_mensal_decrescente.values())[i])/float(list(consumo_mensal_decrescente.values())[i+1])))*100)-100,2)) + '%' +'\n'
     i+=1
 def render_mostrar_consumo():
     titulo = customtkinter.CTkLabel(
