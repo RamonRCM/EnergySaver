@@ -17,11 +17,7 @@ def ler_consumo_mes():
     consumo_mensal_order = dict(sorted(consumoMensal.items()))
     print(consumo_mensal_order)
 
-def chama_render_tela_inicial():
-    tela_registra_consumo.pack_forget()
-    # chamar novamente TelaInicial
 
-# def render_registro_consumo(chama_render_tela_inicial):
 def render_registro_consumo():
     tela_registra_consumo.pack()
 
@@ -34,9 +30,6 @@ def render_registro_consumo():
     # Botão Input Consumo
     botao_input = customtkinter.CTkButton(tela_registra_consumo, text="Registrar Consumo",command=ler_consumo_mes)
     botao_input.pack(pady=10)
-
-    botao_voltar_inicio = customtkinter.CTkButton(tela_registra_consumo,text="Voltar",command=chama_render_tela_inicial)
-    botao_voltar_inicio.pack(pady=10)
 
     # voltarInicio = customtkinter.CTkButton(tela_registra_consumo, text="DESTROY",command=apagar)
     # voltarInicio.pack(pady=10)

@@ -1,7 +1,6 @@
 from imports import *
-from registro_consumo import *
-from tela_inicial import *
 from app import app
+from gerenciador_de_telas import *
 
 
 # Funções
@@ -16,7 +15,6 @@ from app import app
 #     render_tela_inicial(chama_render_registro_consumo)
 #     tela_registra_consumo.pack_forget() # foi para tela registro consumo
 
-
-render_tela_inicial()
+inicio_programa()
 
 app.mainloop()
