@@ -21,9 +21,9 @@ def render_tela_inicial():
 
     referencia = customtkinter.CTkLabel(
         master=tela_inicial, 
-        text= "Desenvolvido por:\nRamon Costa | RU:xxxxxx\nGiovanni Prado | RU:xxxxxx",
+        text= "Desenvolvido por:\nRamon Costa Marques | RU:4105980\nGiovanni Gomes do Prado Júnior | RU:4106394",
         text_color="black",
         font=('Helvetica',15)
     )
-    referencia.place(x=430,y=400)
+    referencia.place(x=190,y=400)
 

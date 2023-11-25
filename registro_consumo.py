@@ -1,7 +1,6 @@
 from imports import *
 from app import *
 from json import *
-
 #Elementos
 
 tela_registra_consumo = customtkinter.CTkFrame(
@@ -63,7 +62,7 @@ def render_registro_consumo():
     consumo_input.place(x=210,y=200)
 
     label_registra_consumo = customtkinter.CTkLabel(
-        tela_registra_consumo, 
+        master=tela_registra_consumo, 
         text="Insira seu consumo de energia e o mês de referência.", 
         text_color="white",
         font=('Helvetica',24)
