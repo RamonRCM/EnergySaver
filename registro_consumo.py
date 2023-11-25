@@ -32,14 +32,29 @@ consumo_input = customtkinter.CTkEntry(
         corner_radius=50
     )
 
-consumoMensal={}
+# consumo_mensal={}
+# consumo_mensal_ordenado={}
+# registro=openpyxl.Workbook()
+# planilha = registro.active
+# planilha['a1'] = 'ANO-MES'
+# planilha['b1'] = 'CONSUMO(R$)'
+# FOI PRO APP
+
 
 
 def ler_consumo_mes():
     print(f"Seu consumo no mês {dropdown_mes.get()} de {dropdown_ano.get()} foi {consumo_input.get()}")
-    consumoMensal[f'{dropdown_ano.get()}-{dropdown_mes.get()}'] = consumo_input.get()
-    consumo_mensal_order = dict(sorted(consumoMensal.items()))
-    print(consumo_mensal_order)
+    consumo_mensal[f'{dropdown_ano.get()}-{dropdown_mes.get()}'] = consumo_input.get()
+    consumo_mensal_ordenado = dict(sorted(consumo_mensal.items()))
+    print(consumo_mensal_ordenado)
+
+    i = 1
+    for chave in consumo_mensal_ordenado.keys():
+        planilha[f'a{i+1}'] = list(consumo_mensal_ordenado.keys())[i-1]
+        planilha[f'b{i+1}'] = list(consumo_mensal_ordenado.values())[i-1]
+        i+=1
+    
+    registro.save('registro.xlsx')
 
 
 def render_registro_consumo():
@@ -54,6 +69,7 @@ def render_registro_consumo():
         font=('Helvetica',24)
     )
     label_registra_consumo.place(x=100,y=20)
+    print(f"DICT INICIAL = {consumo_mensal}")
 
     botao_input = customtkinter.CTkButton(
         master=tela_registra_consumo, 
